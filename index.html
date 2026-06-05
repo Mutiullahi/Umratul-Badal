@@ -1,581 +1,863 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Umratul Badal — عمرة البدل</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
+
+  <!-- ════════════════════════════════════
+       META & TITLE
+  ════════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umratul Badal — عمرة البدل</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════
-     NAVIGATION
-════════════════════════════════════════ -->
-<nav>
-  <div class="nav-logo">
-    <img src="/mnt/user-data/uploads/1000109869.png" alt="Umratul Badal Logo"/>
-    <div class="nav-logo-text">
-      <span class="en">Umratul Badal</span>
-      <span class="ar">عمرة البدل</span>
-    </div>
+
+  <!-- ════════════════════════════════════
+       LOADING SCREEN
+  ════════════════════════════════════ -->
+  <div id="loading-screen">
+    <img
+      class="loader-logo"
+      src="/mnt/user-data/uploads/1000109869.png"
+      alt="Umratul Badal"
+    />
+    <div class="loader-ring"></div>
+    <span class="loader-text" data-i18n="loading">Loading…</span>
   </div>
 
-  <!-- Desktop links -->
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">How It Works</a></li>
-    <li><a href="#">Donations</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#" class="nav-cta">Login</a></li>
-  </ul>
 
-  <!-- Mobile hamburger -->
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</nav>
+  <!-- ════════════════════════════════════
+       NAVIGATION BAR
+  ════════════════════════════════════ -->
+  <nav id="navbar">
 
-<!-- ═══════════════════════════════════════
-     MOBILE SIDEBAR
-════════════════════════════════════════ -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <!-- Logo -->
+    <a href="#" class="nav-logo">
+      <img src="/mnt/user-data/uploads/1000109869.png" alt="Umratul Badal logo" />
+      <div class="nav-logo-text">
+        <span class="logo-en">Umratul Badal</span>
+        <span class="logo-ar">عمرة البدل</span>
+      </div>
+    </a>
 
-<aside class="mobile-sidebar" id="mobileSidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">
-      <img src="/mnt/user-data/uploads/1000109869.png" alt="Umratul Badal"/>
-      <div>
-        <span class="en">Umratul Badal</span>
-        <span class="ar">عمرة البدل</span>
+    <!-- Desktop links -->
+    <ul class="nav-links">
+      <li><a href="#hero"         data-i18n="nav_home">Home</a></li>
+      <li><a href="#services"     data-i18n="nav_services">Services</a></li>
+      <li><a href="#how"          data-i18n="nav_how">How It Works</a></li>
+      <li><a href="#donations"    data-i18n="nav_donations">Donations</a></li>
+      <li><a href="#why"          data-i18n="nav_why">Why Us</a></li>
+      <li><a href="#faq"          data-i18n="nav_faq">FAQ</a></li>
+    </ul>
+
+    <!-- Right-side controls -->
+    <div class="nav-controls">
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn" aria-label="Select language">
+          <span id="langFlag">🇬🇧</span>
+          <span id="langCode">EN</span>
+          <span class="lang-arrow">▾</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <!-- Options are injected by JS from the LANGUAGES config -->
+        </div>
+      </div>
+
+      <!-- Dark / Light Mode Toggle -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
+      </button>
+
+      <!-- Login CTA -->
+      <a href="#" class="btn-nav-cta" data-i18n="nav_login">Login</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════
+       MOBILE SIDEBAR
+  ════════════════════════════════════ -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="mobile-sidebar" id="mobileSidebar">
+
+    <!-- Sidebar header -->
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <img src="/mnt/user-data/uploads/1000109869.png" alt="Umratul Badal" />
+        <div>
+          <span class="logo-en">Umratul Badal</span>
+          <span class="logo-ar">عمرة البدل</span>
+        </div>
+      </div>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <!-- Sidebar nav links -->
+    <ul class="sidebar-links">
+      <li><a href="#hero"         data-i18n="nav_home">Home</a></li>
+      <li><a href="#services"     data-i18n="nav_services">Services</a></li>
+      <li><a href="#how"          data-i18n="nav_how">How It Works</a></li>
+      <li><a href="#donations"    data-i18n="nav_donations">Donations</a></li>
+      <li><a href="#why"          data-i18n="nav_why">Why Us</a></li>
+      <li><a href="#faq"          data-i18n="nav_faq">FAQ</a></li>
+    </ul>
+
+    <!-- Mobile Login -->
+    <a href="#" class="btn-sidebar-cta" data-i18n="nav_login">Login</a>
+
+    <!-- Contact info -->
+    <div class="sidebar-contact">
+      <p>📞 <a href="tel:+966577134926">+966 57 713 4926</a></p>
+      <p>✉ <a href="mailto:info@umratulbadal.com">info@umratulbadal.com</a></p>
+      <p>💬 WhatsApp 24/7</p>
+    </div>
+
+  </aside>
+
+
+  <!-- ════════════════════════════════════
+       HERO SECTION
+  ════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-pattern"></div>
+
+    <div class="hero-content">
+
+      <!-- Badge -->
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span data-i18n="hero_badge">Shariah-Approved · Mecca &amp; Madinah</span>
+        <span class="dot"></span>
+      </div>
+
+      <!-- Bismillah -->
+      <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+
+      <!-- Main title -->
+      <h1 class="hero-title">
+        Umratul <em>Badal</em>
+      </h1>
+
+      <!-- Arabic subtitle -->
+      <p class="hero-arabic">عمرة البدل — خدمة موثوقة</p>
+
+      <!-- Ornamental divider -->
+      <div class="ornament-divider">
+        <div class="od-line"></div>
+        <div class="od-diamond"></div>
+        <div class="od-line right"></div>
+      </div>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle" data-i18n="hero_subtitle">
+        Perform Umrah &amp; Hajj Badal on behalf of your loved ones through
+        trusted, Shariah-certified representatives in the holy cities of
+        Mecca and Madinah.
+      </p>
+
+      <!-- Action buttons -->
+      <div class="hero-actions">
+        <a href="#services" class="btn-gold" data-i18n="hero_cta_book">Book a Service</a>
+        <a href="#how"      class="btn-outline" data-i18n="hero_cta_learn">Learn More</a>
+      </div>
+
+      <!-- Animated stats -->
+      <div class="hero-stats">
+
+        <div class="stat">
+          <div class="stat-num" data-count="2500" data-suffix="+">0</div>
+          <div class="stat-label" data-i18n="stat_umrahs">Umrahs Performed</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-num" data-count="40" data-suffix="+">0</div>
+          <div class="stat-label" data-i18n="stat_countries">Countries Served</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-num" data-count="100" data-suffix="%">0</div>
+          <div class="stat-label" data-i18n="stat_certified">Shariah Certified</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-num" data-count="72" data-suffix="h">0</div>
+          <div class="stat-label" data-i18n="stat_proof">Proof Delivery</div>
+        </div>
+
       </div>
     </div>
-    <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+  </section>
+
+
+  <!-- ════════════════════════════════════
+       TRUST BAND
+  ════════════════════════════════════ -->
+  <div class="trust-band">
+    <div class="trust-item">
+      <div class="trust-icon">🎥</div>
+      <span data-i18n="trust_video">Live Video Proof</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🕌</div>
+      <span data-i18n="trust_scholars">Scholar-Supervised</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🏅</div>
+      <span data-i18n="trust_cert">Official Certificate</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">⚖️</div>
+      <span data-i18n="trust_shariah">Shariah Compliant</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">💬</div>
+      <span data-i18n="trust_support">24/7 WhatsApp Support</span>
+    </div>
   </div>
 
-  <ul class="mobile-nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">How It Works</a></li>
-    <li><a href="#">Donations</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
 
-  <a href="#" class="mobile-nav-cta">Login</a>
+  <!-- ════════════════════════════════════
+       SERVICES SECTION
+  ════════════════════════════════════ -->
+  <section class="section-pad bg-page" id="services">
+    <div class="section-max">
 
-  <div class="sidebar-contact-info">
-    <p>📞 <a href="tel:+966577134926">+966 57 713 4926</a></p>
-    <p>✉ <a href="mailto:info@umratulbadal.com">info@umratulbadal.com</a></p>
-    <p>💬 WhatsApp Support 24/7</p>
-  </div>
-</aside>
-
-
-<!-- ═══════════════════════════════════════
-     HERO
-════════════════════════════════════════ -->
-<section class="hero">
-  <div class="hero-pattern"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><span></span> Shariah-Approved · Mecca &amp; Madinah <span></span></div>
-    <div class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-    <h1 class="hero-title">Umratul <span>Badal</span></h1>
-    <div class="hero-arabic">عمرة البدل — خدمة موثوقة</div>
-    <div class="hero-divider">
-      <div class="hero-divider-line"></div>
-      <div class="hero-divider-diamond"></div>
-      <div class="hero-divider-line r"></div>
-    </div>
-    <p class="hero-subtitle">
-      Perform Umrah &amp; Hajj Badal on behalf of your loved ones through trusted,
-      Shariah-certified representatives in the holy cities of Mecca and Madinah.
-    </p>
-    <div class="hero-actions">
-      <a href="#" class="btn-gold">Book a Service</a>
-      <a href="#" class="btn-outline">Learn More</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">2,500+</div>
-        <div class="stat-label">Umrahs Performed</div>
+      <!-- Header -->
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="services_eyebrow">Our Sacred Services</span>
+        <h2 class="section-title">
+          <span data-i18n="services_title_a">Hajj &amp;</span>
+          <em data-i18n="services_title_b">Umrah Badal</em>
+        </h2>
+        <div class="gold-rule">
+          <div class="gr-line"></div>
+          <div class="gr-diamond"></div>
+          <div class="gr-line right"></div>
+        </div>
+        <p class="section-arabic">خدمات الحج والعمرة البدل</p>
+        <p class="section-desc" data-i18n="services_desc">
+          Choose a service performed by certified Islamic scholars residing in the Holy Cities
+        </p>
       </div>
-      <div class="stat">
-        <div class="stat-num">40+</div>
-        <div class="stat-label">Countries Served</div>
+
+      <!-- Cards grid -->
+      <div class="services-grid">
+
+        <!-- Card 1: Hajj Badal -->
+        <div class="service-card reveal reveal-delay-1">
+          <span class="card-icon">🕋</span>
+          <span class="card-tag" data-i18n="tag_complete">Most Complete</span>
+          <h3 class="card-title" data-i18n="hajj_title">Hajj Badal</h3>
+          <p class="card-arabic">حج البدل</p>
+          <p class="card-desc" data-i18n="hajj_desc">
+            Full Hajj pilgrimage performed on behalf of your loved one who is
+            unable due to illness, old age, or death.
+          </p>
+          <div class="card-price">
+            <span class="price-from" data-i18n="from">from</span>
+            <span class="price-amount">2,499</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <ul class="card-features">
+            <li data-i18n="hajj_f1">All 5 pillars of Hajj performed</li>
+            <li data-i18n="hajj_f2">Full video &amp; photo documentation</li>
+            <li data-i18n="hajj_f3">Official certificate issued</li>
+            <li data-i18n="hajj_f4">Supervised by qualified Ulama</li>
+          </ul>
+          <a href="#" class="btn-card" data-i18n="book_hajj">Book Hajj Badal</a>
+        </div>
+
+        <!-- Card 2: Umrah Badal (featured) -->
+        <div class="service-card featured reveal reveal-delay-2">
+          <span class="card-icon">✨</span>
+          <span class="card-tag" data-i18n="tag_popular">Most Popular</span>
+          <h3 class="card-title" data-i18n="umrah_title">Umrah Badal</h3>
+          <p class="card-arabic">عمرة البدل</p>
+          <p class="card-desc" data-i18n="umrah_desc">
+            Proxy Umrah in Makkah performed with complete care and sincerity on
+            behalf of any person — living or deceased.
+          </p>
+          <div class="card-price">
+            <span class="price-from" data-i18n="from">from</span>
+            <span class="price-amount">199</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <ul class="card-features">
+            <li data-i18n="umrah_f1">Tawaf, Sa'i &amp; all rituals complete</li>
+            <li data-i18n="umrah_f2">Video proof within 72 hours</li>
+            <li data-i18n="umrah_f3">Digital certificate emailed</li>
+            <li data-i18n="umrah_f4">For living or deceased persons</li>
+          </ul>
+          <a href="#" class="btn-card-outline" data-i18n="book_umrah">Book Umrah Badal</a>
+        </div>
+
+        <!-- Card 3: Ramadan Umrah -->
+        <div class="service-card reveal reveal-delay-3">
+          <span class="card-icon">🌙</span>
+          <span class="card-tag" data-i18n="tag_reward">High Reward</span>
+          <h3 class="card-title" data-i18n="ramadan_title">Ramadan Umrah Badal</h3>
+          <p class="card-arabic">عمرة رمضان البدل</p>
+          <p class="card-desc" data-i18n="ramadan_desc">
+            Umrah performed during the blessed month of Ramadan — equivalent in
+            reward to a full Hajj according to authentic Hadith.
+          </p>
+          <div class="card-price">
+            <span class="price-from" data-i18n="from">from</span>
+            <span class="price-amount">299</span>
+            <span class="price-currency">USD</span>
+          </div>
+          <ul class="card-features">
+            <li data-i18n="ramadan_f1">Performed in Ramadan nights</li>
+            <li data-i18n="ramadan_f2">Multiplied spiritual reward</li>
+            <li data-i18n="ramadan_f3">Full documentation provided</li>
+            <li data-i18n="ramadan_f4">Priority scheduling available</li>
+          </ul>
+          <a href="#" class="btn-card" data-i18n="book_ramadan">Book Ramadan Umrah</a>
+        </div>
+
       </div>
-      <div class="stat">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Shariah Certified</div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════
+       HOW IT WORKS SECTION
+  ════════════════════════════════════ -->
+  <section class="section-pad bg-dark" id="how">
+    <div class="section-max">
+
+      <!-- Header -->
+      <div class="section-header reveal">
+        <span class="eyebrow light" data-i18n="how_eyebrow">Simple Process</span>
+        <h2 class="section-title light">
+          <span data-i18n="how_title_a">How It</span>
+          <em data-i18n="how_title_b">Works</em>
+        </h2>
+        <div class="gold-rule">
+          <div class="gr-line"></div>
+          <div class="gr-diamond"></div>
+          <div class="gr-line right"></div>
+        </div>
+        <p class="section-desc light" data-i18n="how_desc">
+          Four simple steps to fulfil this sacred act of worship for your loved one
+        </p>
       </div>
-      <div class="stat">
-        <div class="stat-num">72h</div>
-        <div class="stat-label">Proof Delivery</div>
+
+      <!-- Steps -->
+      <div class="steps-grid">
+
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">01</div>
+          <div class="step-icon">📋</div>
+          <h3 class="step-title" data-i18n="step1_title">Select Service</h3>
+          <p class="step-desc" data-i18n="step1_desc">
+            Choose from Umrah Badal, Hajj Badal, or Ramadan Umrah — for living or deceased.
+          </p>
+        </div>
+
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">02</div>
+          <div class="step-icon">✍️</div>
+          <h3 class="step-title" data-i18n="step2_title">Provide Details</h3>
+          <p class="step-desc" data-i18n="step2_desc">
+            Share the name of the person the ritual is for and complete your secure payment.
+          </p>
+        </div>
+
+        <div class="step reveal reveal-delay-3">
+          <div class="step-num">03</div>
+          <div class="step-icon">🕌</div>
+          <h3 class="step-title" data-i18n="step3_title">We Perform</h3>
+          <p class="step-desc" data-i18n="step3_desc">
+            Our certified scholar performs all rituals in Makkah with full sincerity and precision.
+          </p>
+        </div>
+
+        <div class="step reveal reveal-delay-4">
+          <div class="step-num">04</div>
+          <div class="step-icon">📜</div>
+          <h3 class="step-title" data-i18n="step4_title">Receive Proof</h3>
+          <p class="step-desc" data-i18n="step4_desc">
+            Get your video proof, photos, and official digital certificate within 72 hours.
+          </p>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ═══════════════════════════════════════
-     TRUST BAND
-════════════════════════════════════════ -->
-<div class="trust-band">
-  <div class="trust-item"><div class="trust-icon">🎥</div> Live Video Proof</div>
-  <div class="trust-item"><div class="trust-icon">🕌</div> Scholars-Supervised</div>
-  <div class="trust-item"><div class="trust-icon">🏅</div> Official Certificate</div>
-  <div class="trust-item"><div class="trust-icon">⚖️</div> Shariah Compliant</div>
-  <div class="trust-item"><div class="trust-icon">💬</div> 24/7 WhatsApp Support</div>
-</div>
+  <!-- ════════════════════════════════════
+       DONATIONS SECTION
+  ════════════════════════════════════ -->
+  <section class="section-pad bg-alt" id="donations">
+    <div class="section-max">
 
-
-<!-- ═══════════════════════════════════════
-     SERVICES
-════════════════════════════════════════ -->
-<section class="services">
-  <div class="section-header fade-up">
-    <span class="section-eyebrow">Our Sacred Services</span>
-    <h2 class="section-title">Hajj &amp; <em>Umrah Badal</em></h2>
-    <div class="gold-rule">
-      <div class="gold-rule-line"></div>
-      <div class="gold-rule-diamond"></div>
-      <div class="gold-rule-line r"></div>
-    </div>
-    <div class="section-arabic">خدمات الحج والعمرة البدل</div>
-    <p class="section-desc">Choose a service performed by certified Islamic scholars residing in the Holy Cities</p>
-  </div>
-
-  <div class="services-grid">
-
-    <!-- Hajj Badal -->
-    <div class="service-card fade-up">
-      <span class="service-icon">🕋</span>
-      <span class="service-tag">Most Complete</span>
-      <h3 class="service-name">Hajj Badal</h3>
-      <div class="service-arabic">حج البدل</div>
-      <p class="service-desc">Full Hajj pilgrimage performed on behalf of your loved one who is unable due to illness, old age, or death.</p>
-      <div class="service-price">
-        <span class="service-price-from">from</span>
-        <span class="service-price-amount">2,499</span>
-        <span class="service-price-currency">USD</span>
+      <!-- Header -->
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="donations_eyebrow">Sadaqah Jariyah</span>
+        <h2 class="section-title">
+          <span data-i18n="donations_title_a">Donate to the</span>
+          <em data-i18n="donations_title_b">Holy Cities</em>
+        </h2>
+        <div class="gold-rule">
+          <div class="gr-line"></div>
+          <div class="gr-diamond"></div>
+          <div class="gr-line right"></div>
+        </div>
+        <p class="section-desc" data-i18n="donations_desc">
+          Earn continuous blessings through charitable giving in Mecca and Madinah
+        </p>
       </div>
-      <ul class="service-features">
-        <li>All 5 pillars of Hajj performed</li>
-        <li>Full video &amp; photo documentation</li>
-        <li>Official certificate issued</li>
-        <li>Supervised by qualified Ulama</li>
-      </ul>
-      <a href="#" class="btn-service">Book Hajj Badal</a>
-    </div>
 
-    <!-- Umrah Badal FEATURED -->
-    <div class="service-card featured fade-up">
-      <span class="service-icon">✨</span>
-      <span class="service-tag" style="color:var(--gold-light)">Most Popular</span>
-      <h3 class="service-name">Umrah Badal</h3>
-      <div class="service-arabic">عمرة البدل</div>
-      <p class="service-desc">Proxy Umrah in Makkah performed with complete care and sincerity on behalf of any person — living or deceased.</p>
-      <div class="service-price">
-        <span class="service-price-from">from</span>
-        <span class="service-price-amount">199</span>
-        <span class="service-price-currency">USD</span>
+      <!-- Donation cards -->
+      <div class="donations-grid">
+
+        <div class="donation-card reveal reveal-delay-1">
+          <span class="donation-emoji">🦽</span>
+          <h3 class="donation-title" data-i18n="don1_title">Wheelchair Donation</h3>
+          <p class="donation-desc" data-i18n="don1_desc">
+            Provide mobility assistance for elderly and disabled pilgrims performing Tawaf.
+          </p>
+          <span class="donation-amount">$150</span>
+        </div>
+
+        <div class="donation-card reveal reveal-delay-2">
+          <span class="donation-emoji">📖</span>
+          <h3 class="donation-title" data-i18n="don2_title">Qur'an Donation</h3>
+          <p class="donation-desc" data-i18n="don2_desc">
+            Donate 5 copies of the Holy Qur'an to pilgrims visiting the Masjid al-Haram.
+          </p>
+          <span class="donation-amount">$99</span>
+        </div>
+
+        <div class="donation-card reveal reveal-delay-3">
+          <span class="donation-emoji">🐑</span>
+          <h3 class="donation-title" data-i18n="don3_title">Qurbani Sacrifice</h3>
+          <p class="donation-desc" data-i18n="don3_desc">
+            Sheep slaughtered in Makkah during Hajj season on your behalf.
+          </p>
+          <span class="donation-amount">$200</span>
+        </div>
+
+        <div class="donation-card reveal reveal-delay-1">
+          <span class="donation-emoji">🍽️</span>
+          <h3 class="donation-title" data-i18n="don4_title">Feed Pilgrims</h3>
+          <p class="donation-desc" data-i18n="don4_desc">
+            Sponsor Iftar meals and food packages for pilgrims in Makkah.
+          </p>
+          <span class="donation-amount">$99</span>
+        </div>
+
+        <div class="donation-card reveal reveal-delay-2">
+          <span class="donation-emoji">💧</span>
+          <h3 class="donation-title" data-i18n="don5_title">Zamzam Water</h3>
+          <p class="donation-desc" data-i18n="don5_desc">
+            Donate boxes of blessed Zamzam water — a box of 40 bottles for pilgrims.
+          </p>
+          <span class="donation-amount">$99</span>
+        </div>
+
+        <!-- CTA card -->
+        <div class="donation-card donation-cta reveal reveal-delay-3">
+          <p class="donation-cta-arabic">تبرع الآن</p>
+          <h3 data-i18n="don_cta_title">Give Sadaqah Today</h3>
+          <p data-i18n="don_cta_quote">"Charity does not decrease wealth" — Prophet Muhammad ﷺ</p>
+          <a href="#" class="btn-gold" data-i18n="don_cta_btn">View All Donations</a>
+        </div>
+
       </div>
-      <ul class="service-features">
-        <li>Tawaf, Sa'i &amp; all rituals complete</li>
-        <li>Video proof within 72 hours</li>
-        <li>Digital certificate emailed</li>
-        <li>For living or deceased persons</li>
-      </ul>
-      <a href="#" class="btn-service-outline">Book Umrah Badal</a>
     </div>
+  </section>
 
-    <!-- Ramadan Umrah -->
-    <div class="service-card fade-up">
-      <span class="service-icon">🌙</span>
-      <span class="service-tag">High Reward</span>
-      <h3 class="service-name">Ramadan Umrah Badal</h3>
-      <div class="service-arabic">عمرة رمضان البدل</div>
-      <p class="service-desc">Umrah performed during the blessed month of Ramadan — equivalent in reward to a full Hajj according to authentic Hadith.</p>
-      <div class="service-price">
-        <span class="service-price-from">from</span>
-        <span class="service-price-amount">299</span>
-        <span class="service-price-currency">USD</span>
+
+  <!-- ════════════════════════════════════
+       WHY US SECTION
+  ════════════════════════════════════ -->
+  <section class="section-pad bg-page" id="why">
+    <div class="section-max why-grid">
+
+      <!-- Left: certificate card -->
+      <div class="why-cert-wrap reveal reveal-left">
+        <div class="why-cert-card">
+          <h4 class="cert-card-title" data-i18n="cert_title">What You Receive</h4>
+          <ul class="cert-list">
+            <li><div class="cert-check">✓</div><span data-i18n="cert1">HD Video of rituals performed in Makkah</span></li>
+            <li><div class="cert-check">✓</div><span data-i18n="cert2">Multiple photographs from Holy sites</span></li>
+            <li><div class="cert-check">✓</div><span data-i18n="cert3">Official digital certificate with name</span></li>
+            <li><div class="cert-check">✓</div><span data-i18n="cert4">Written confirmation from our scholar</span></li>
+            <li><div class="cert-check">✓</div><span data-i18n="cert5">Delivered within 72 hours by email</span></li>
+            <li><div class="cert-check">✓</div><span data-i18n="cert6">WhatsApp notification on completion</span></li>
+          </ul>
+          <!-- Floating badge -->
+          <div class="cert-badge">
+            <strong data-count="1000" data-suffix="+">0</strong>
+            <span data-i18n="cert_badge">Certificates Issued</span>
+          </div>
+        </div>
       </div>
-      <ul class="service-features">
-        <li>Performed in Ramadan nights</li>
-        <li>Multiplied spiritual reward</li>
-        <li>Full documentation provided</li>
-        <li>Priority scheduling available</li>
-      </ul>
-      <a href="#" class="btn-service">Book Ramadan Umrah</a>
-    </div>
 
-  </div>
-</section>
+      <!-- Right: why points -->
+      <div class="why-points-wrap reveal reveal-right">
+        <span class="eyebrow" data-i18n="why_eyebrow">Why Choose Us</span>
+        <h2 class="section-title">
+          <span data-i18n="why_title_a">Trust &amp;</span>
+          <em data-i18n="why_title_b">Authenticity</em>
+        </h2>
+        <div class="gold-rule" style="justify-content: flex-start; margin-bottom: 28px;">
+          <div class="gr-line"></div>
+          <div class="gr-diamond"></div>
+          <div class="gr-line right"></div>
+        </div>
 
+        <ul class="why-list">
 
-<!-- ═══════════════════════════════════════
-     HOW IT WORKS
-════════════════════════════════════════ -->
-<section class="how">
-  <div class="section-header fade-up">
-    <span class="section-eyebrow">Simple Process</span>
-    <h2 class="section-title" style="color:var(--white)">How It <em style="color:var(--gold-light)">Works</em></h2>
-    <div class="gold-rule">
-      <div class="gold-rule-line"></div>
-      <div class="gold-rule-diamond"></div>
-      <div class="gold-rule-line r"></div>
-    </div>
-    <p class="section-desc" style="color:rgba(255,255,255,0.6)">Four simple steps to fulfil this sacred act of worship for your loved one</p>
-  </div>
-  <div class="steps">
-    <div class="step fade-up">
-      <div class="step-num">01</div>
-      <div class="step-icon">📋</div>
-      <h3 class="step-title">Select Service</h3>
-      <p class="step-desc">Choose from Umrah Badal, Hajj Badal, or Ramadan Umrah — for living or deceased.</p>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">02</div>
-      <div class="step-icon">✍️</div>
-      <h3 class="step-title">Provide Details</h3>
-      <p class="step-desc">Share the name of the person the ritual is for and complete your secure payment.</p>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">03</div>
-      <div class="step-icon">🕌</div>
-      <h3 class="step-title">We Perform</h3>
-      <p class="step-desc">Our certified scholar performs all rituals in Makkah with full sincerity and precision.</p>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">04</div>
-      <div class="step-icon">📜</div>
-      <h3 class="step-title">Receive Proof</h3>
-      <p class="step-desc">Get your video proof, photos, and official digital certificate within 72 hours.</p>
-    </div>
-  </div>
-</section>
+          <li class="why-item">
+            <div class="why-icon">🕌</div>
+            <div>
+              <h4 class="why-item-title" data-i18n="why1_title">Scholars in Makkah</h4>
+              <p class="why-item-desc" data-i18n="why1_desc">
+                All rituals are performed by qualified Islamic scholars (Ulama) residing in the Holy Cities — not remote agents.
+              </p>
+            </div>
+          </li>
 
+          <li class="why-item">
+            <div class="why-icon">⚖️</div>
+            <div>
+              <h4 class="why-item-title" data-i18n="why2_title">Shariah Compliant</h4>
+              <p class="why-item-desc" data-i18n="why2_desc">
+                Every service follows Shariah rulings on Badal as verified by multiple Islamic institutions and scholars.
+              </p>
+            </div>
+          </li>
 
-<!-- ═══════════════════════════════════════
-     DONATIONS
-════════════════════════════════════════ -->
-<section class="donations">
-  <div class="section-header fade-up">
-    <span class="section-eyebrow">Sadaqah Jariyah</span>
-    <h2 class="section-title">Donate to the <em>Holy Cities</em></h2>
-    <div class="gold-rule">
-      <div class="gold-rule-line"></div>
-      <div class="gold-rule-diamond"></div>
-      <div class="gold-rule-line r"></div>
-    </div>
-    <p class="section-desc">Earn continuous blessings through charitable giving in Mecca and Madinah</p>
-  </div>
-  <div class="donations-grid">
-    <div class="donation-card fade-up">
-      <span class="donation-emoji">🦽</span>
-      <h3 class="donation-title">Wheelchair Donation</h3>
-      <p class="donation-desc">Provide mobility assistance for elderly and disabled pilgrims performing Tawaf.</p>
-      <div class="donation-amount">$150</div>
-    </div>
-    <div class="donation-card fade-up">
-      <span class="donation-emoji">📖</span>
-      <h3 class="donation-title">Qur'an Donation</h3>
-      <p class="donation-desc">Donate 5 copies of the Holy Qur'an to pilgrims visiting the Masjid al-Haram.</p>
-      <div class="donation-amount">$99</div>
-    </div>
-    <div class="donation-card fade-up">
-      <span class="donation-emoji">🐑</span>
-      <h3 class="donation-title">Qurbani Sacrifice</h3>
-      <p class="donation-desc">Sheep (Dumba) slaughtered in Makkah during Hajj season on your behalf.</p>
-      <div class="donation-amount">$200</div>
-    </div>
-    <div class="donation-card fade-up">
-      <span class="donation-emoji">🍽️</span>
-      <h3 class="donation-title">Feed Pilgrims</h3>
-      <p class="donation-desc">Sponsor Iftar meals and food packages for pilgrims in the holy city of Makkah.</p>
-      <div class="donation-amount">$99</div>
-    </div>
-    <div class="donation-card fade-up">
-      <span class="donation-emoji">💧</span>
-      <h3 class="donation-title">Zamzam Water</h3>
-      <p class="donation-desc">Donate boxes of blessed Zamzam water to pilgrims — a box of 40 bottles.</p>
-      <div class="donation-amount">$99</div>
-    </div>
-    <div class="donation-card fade-up" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(145deg,var(--emerald-dark),var(--emerald));border-color:rgba(201,168,76,0.3);">
-      <div style="font-family:'Noto Naskh Arabic',serif;font-size:22px;color:var(--gold-light);margin-bottom:12px;">تبرع الآن</div>
-      <h3 style="font-family:'Cinzel',serif;font-size:18px;color:var(--white);margin-bottom:10px;">Give Sadaqah Today</h3>
-      <p style="font-size:14px;font-style:italic;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.6;">"Charity does not decrease wealth" — Prophet Muhammad ﷺ</p>
-      <a href="#" class="btn-gold">View All Donations</a>
-    </div>
-  </div>
-</section>
+          <li class="why-item">
+            <div class="why-icon">🏅</div>
+            <div>
+              <h4 class="why-item-title" data-i18n="why3_title">Certified &amp; Transparent</h4>
+              <p class="why-item-desc" data-i18n="why3_desc">
+                A legally registered, fully accountable organisation trusted by clients worldwide.
+              </p>
+            </div>
+          </li>
 
+          <li class="why-item">
+            <div class="why-icon">🌍</div>
+            <div>
+              <h4 class="why-item-title" data-i18n="why4_title">Serving 40+ Countries</h4>
+              <p class="why-item-desc" data-i18n="why4_desc">
+                Muslims from the USA, UK, Canada, Australia, Malaysia, and beyond trust our service every year.
+              </p>
+            </div>
+          </li>
 
-<!-- ═══════════════════════════════════════
-     WHY US
-════════════════════════════════════════ -->
-<section class="why">
-  <div class="why-grid">
-    <div class="why-visual fade-up">
-      <div class="why-card-main">
-        <div class="why-cert-title">What You Receive</div>
-        <ul class="cert-list">
-          <li><div class="cert-check">✓</div> HD Video of rituals performed in Makkah</li>
-          <li><div class="cert-check">✓</div> Multiple photographs from Holy sites</li>
-          <li><div class="cert-check">✓</div> Official digital certificate with name</li>
-          <li><div class="cert-check">✓</div> Written confirmation from our scholar</li>
-          <li><div class="cert-check">✓</div> Delivered within 72 hours by email</li>
-          <li><div class="cert-check">✓</div> WhatsApp notification on completion</li>
         </ul>
-        <div class="why-float">
-          <strong>1000+</strong>
-          Certificates Issued
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════
+       TESTIMONIALS SECTION
+  ════════════════════════════════════ -->
+  <section class="section-pad bg-dark" id="testimonials">
+    <div class="section-max">
+
+      <!-- Header -->
+      <div class="section-header reveal">
+        <span class="eyebrow light" data-i18n="testi_eyebrow">Testimonials</span>
+        <h2 class="section-title light">
+          <span data-i18n="testi_title_a">Words from Our</span>
+          <em data-i18n="testi_title_b">Clients</em>
+        </h2>
+        <div class="gold-rule">
+          <div class="gr-line"></div>
+          <div class="gr-diamond"></div>
+          <div class="gr-line right"></div>
         </div>
       </div>
-    </div>
 
-    <div class="fade-up">
-      <span class="section-eyebrow">Why Choose Us</span>
-      <h2 class="section-title">Trust &amp; <em>Authenticity</em></h2>
-      <div class="gold-rule" style="justify-content:flex-start;margin-bottom:28px;">
-        <div class="gold-rule-line"></div>
-        <div class="gold-rule-diamond"></div>
-        <div class="gold-rule-line r"></div>
-      </div>
-      <ul class="why-points">
-        <li class="why-point">
-          <div class="why-point-icon">🕌</div>
-          <div>
-            <div class="why-point-title">Scholars in Makkah</div>
-            <p class="why-point-desc">All rituals are performed by qualified Islamic scholars (Ulama) residing in the Holy Cities — not remote agents.</p>
+      <!-- Cards -->
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="t-quote">"</div>
+          <p class="t-text" data-i18n="testi1_text">
+            I ordered Umrah Badal for my late mother and received a beautiful certificate and
+            video within two days. May Allah accept it. The service was professional and heartfelt.
+          </p>
+          <div class="t-stars">★★★★★</div>
+          <div class="t-author">
+            <div class="t-avatar">👤</div>
+            <div>
+              <div class="t-name">Ahmed Al-Rashidi</div>
+              <div class="t-location">Dubai, UAE</div>
+            </div>
           </div>
-        </li>
-        <li class="why-point">
-          <div class="why-point-icon">⚖️</div>
-          <div>
-            <div class="why-point-title">Shariah Compliant</div>
-            <p class="why-point-desc">Every service follows Shariah rulings on Badal as verified by multiple Islamic institutions and scholars.</p>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="t-quote">"</div>
+          <p class="t-text" data-i18n="testi2_text">
+            My father passed away without completing Hajj. Umratul Badal helped us perform Hajj
+            Badal on his behalf. We felt such peace. Absolutely recommend this service.
+          </p>
+          <div class="t-stars">★★★★★</div>
+          <div class="t-author">
+            <div class="t-avatar">👤</div>
+            <div>
+              <div class="t-name">Fatimah Hassan</div>
+              <div class="t-location">London, UK</div>
+            </div>
           </div>
-        </li>
-        <li class="why-point">
-          <div class="why-point-icon">🏅</div>
-          <div>
-            <div class="why-point-title">Certified &amp; Transparent</div>
-            <p class="why-point-desc">Umratul Badal is a legally registered, fully accountable organisation trusted by clients worldwide.</p>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="t-quote">"</div>
+          <p class="t-text" data-i18n="testi3_text">
+            Ordered Ramadan Umrah Badal for my elderly mother. The video proof was touching —
+            she cried watching her name mentioned in the Haram. JazakAllah khair.
+          </p>
+          <div class="t-stars">★★★★★</div>
+          <div class="t-author">
+            <div class="t-avatar">👤</div>
+            <div>
+              <div class="t-name">Yusuf Diallo</div>
+              <div class="t-location">Toronto, Canada</div>
+            </div>
           </div>
-        </li>
-        <li class="why-point">
-          <div class="why-point-icon">🌍</div>
-          <div>
-            <div class="why-point-title">Serving 40+ Countries</div>
-            <p class="why-point-desc">Muslims from the USA, UK, Canada, Australia, Malaysia, and beyond trust our service every year.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════
+       FAQ SECTION
+  ════════════════════════════════════ -->
+  <section class="section-pad bg-alt" id="faq">
+    <div class="section-max">
+
+      <!-- Header -->
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="faq_eyebrow">Common Questions</span>
+        <h2 class="section-title">
+          <span data-i18n="faq_title_a">Frequently Asked</span>
+          <em data-i18n="faq_title_b">Questions</em>
+        </h2>
+        <div class="gold-rule">
+          <div class="gr-line"></div>
+          <div class="gr-diamond"></div>
+          <div class="gr-line right"></div>
+        </div>
+      </div>
+
+      <!-- FAQ list -->
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-i18n="faq1_q">What is Umrah Badal (Proxy Umrah)?</span>
+            <span class="faq-icon">+</span>
           </div>
-        </li>
-      </ul>
+          <div class="faq-answer" data-i18n="faq1_a">
+            Umrah Badal is when a Muslim performs Umrah on behalf of another person who is
+            unable to do so — due to illness, old age, disability, or death. It is supported
+            by authentic Islamic scholarship.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-i18n="faq2_q">Is Proxy Umrah permitted in Islam?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="faq2_a">
+            Yes. The Prophet ﷺ permitted Hajj to be performed on behalf of those who are unable.
+            The majority of Islamic scholars consider Umrah Badal similarly permissible.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-i18n="faq3_q">Can I order it for a deceased family member?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="faq3_a">
+            Yes. You may order an Umrah Badal or Hajj Badal for a deceased person as an act of
+            Sadaqah Jariyah. Please provide their full name when booking.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-i18n="faq4_q">What proof will I receive?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="faq4_a">
+            Within 72 hours: an HD video, photos from the Holy Mosque, an official digital
+            certificate with the person's name, and written confirmation from our scholar.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-i18n="faq5_q">Who performs the Umrah or Hajj?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="faq5_a">
+            All rituals are performed by qualified Islamic scholars (Ulama) residing in or near
+            Makkah. They perform every ritual with sincerity and according to Shariah.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-i18n="faq6_q">Is this service certified and trustworthy?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="faq6_a">
+            Yes. Umratul Badal is a legally registered, fully accountable organisation. We operate
+            with complete transparency and have served clients across 40+ countries.
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ═══════════════════════════════════════
-     TESTIMONIALS
-════════════════════════════════════════ -->
-<section class="testimonials">
-  <div class="section-header fade-up">
-    <span class="section-eyebrow">Testimonials</span>
-    <h2 class="section-title">Words from Our <em style="color:var(--gold-light)">Clients</em></h2>
-    <div class="gold-rule">
-      <div class="gold-rule-line"></div>
-      <div class="gold-rule-diamond"></div>
-      <div class="gold-rule-line r"></div>
+  <!-- ════════════════════════════════════
+       CTA BANNER
+  ════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="cta-rings"></div>
+    <div class="cta-content reveal reveal-scale">
+      <p class="cta-arabic">احجز الآن</p>
+      <h2 class="cta-title" data-i18n="cta_title">
+        Ready to Fulfil This<br/>Sacred Obligation?
+      </h2>
+      <p class="cta-sub" data-i18n="cta_sub">
+        Let us perform Umrah or Hajj Badal for your loved ones with sincerity,
+        care, and full documentation.
+      </p>
+      <div class="cta-actions">
+        <a href="#services" class="btn-gold"      data-i18n="cta_btn_book">Book a Service</a>
+        <a href="https://wa.me/966577134926" class="btn-whatsapp">
+          <!-- WhatsApp SVG icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span data-i18n="cta_btn_wa">WhatsApp Us</span>
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card fade-up">
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">I ordered Umrah Badal for my late mother and received a beautiful certificate and video within two days. May Allah accept it. The service was professional and truly heartfelt.</p>
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">👤</div>
-        <div>
-          <div class="testimonial-name">Ahmed Al-Rashidi</div>
-          <div class="testimonial-location">Dubai, UAE</div>
+  </section>
+
+
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid section-max">
+
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/mnt/user-data/uploads/1000109869.png" alt="Umratul Badal" />
+          <div>
+            <span class="logo-en">Umratul Badal</span>
+            <span class="logo-ar">عمرة البدل</span>
+          </div>
+        </div>
+        <p class="footer-tagline" data-i18n="footer_tagline">
+          Trusted Proxy Umrah and Hajj Badal services, performed by certified
+          scholars in the Holy Cities of Mecca and Madinah.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          <a href="#" class="social-btn" aria-label="Email">✉</a>
         </div>
       </div>
-    </div>
-    <div class="testimonial-card fade-up">
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">My father passed away without completing Hajj. Umratul Badal helped us perform Hajj Badal on his behalf. We felt such peace. Absolutely recommend this trustworthy service.</p>
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">👤</div>
-        <div>
-          <div class="testimonial-name">Fatimah Hassan</div>
-          <div class="testimonial-location">London, UK</div>
+
+      <!-- Services links -->
+      <div>
+        <p class="footer-col-title" data-i18n="footer_services">Services</p>
+        <ul class="footer-links">
+          <li><a href="#" data-i18n="umrah_title">Umrah Badal</a></li>
+          <li><a href="#" data-i18n="hajj_title">Hajj Badal</a></li>
+          <li><a href="#" data-i18n="ramadan_title">Ramadan Umrah</a></li>
+          <li><a href="#" data-i18n="footer_all_services">All Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Donations links -->
+      <div>
+        <p class="footer-col-title" data-i18n="nav_donations">Donate</p>
+        <ul class="footer-links">
+          <li><a href="#" data-i18n="don4_title">Feed Pilgrims</a></li>
+          <li><a href="#" data-i18n="don2_title">Qur'an Donation</a></li>
+          <li><a href="#" data-i18n="don1_title">Wheelchair Fund</a></li>
+          <li><a href="#" data-i18n="don5_title">Zamzam Water</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact info -->
+      <div>
+        <p class="footer-col-title" data-i18n="footer_contact">Contact</p>
+        <div class="footer-contact">
+          <p><span>📍</span> 65 Rogers Road, Dagenham, London, UK</p>
+          <p><span>📞</span> +966 57 713 4926</p>
+          <p><span>✉</span> info@umratulbadal.com</p>
+          <p><span>💬</span> <span data-i18n="trust_support">WhatsApp 24/7</span></p>
         </div>
       </div>
-    </div>
-    <div class="testimonial-card fade-up">
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Ordered Ramadan Umrah Badal for my elderly mother who cannot travel. The video proof was touching — she cried watching her name being mentioned in the Haram. JazakAllah.</p>
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">👤</div>
-        <div>
-          <div class="testimonial-name">Yusuf Diallo</div>
-          <div class="testimonial-location">Toronto, Canada</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-
-<!-- ═══════════════════════════════════════
-     FAQ
-════════════════════════════════════════ -->
-<section class="faq-section">
-  <div class="faq-inner">
-    <div class="section-header fade-up">
-      <span class="section-eyebrow">Common Questions</span>
-      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
-      <div class="gold-rule">
-        <div class="gold-rule-line"></div>
-        <div class="gold-rule-diamond"></div>
-        <div class="gold-rule-line r"></div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">What is Umrah Badal (Proxy Umrah)?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Umrah Badal is when a Muslim performs Umrah on behalf of another person who is unable to do so themselves — due to illness, old age, disability, or death. It is an act of worship and mercy supported by Islamic scholarship.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">Is Proxy Umrah permitted in Islam?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Yes. Performing Umrah on behalf of another is supported by authentic Hadith. The Prophet ﷺ permitted Hajj to be performed on behalf of those who are unable. The majority of Islamic scholars consider Umrah Badal similarly permissible.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">Can I order it for a deceased family member?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Yes. You may order an Umrah Badal or Hajj Badal for a deceased person as an act of Sadaqah Jariyah (ongoing charity). Please provide their full name when booking.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">What proof will I receive?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Within 72 hours of the service being performed, you will receive: an HD video of the rituals, photos from the Holy Mosque, an official digital certificate with the person's name, and a written confirmation from our scholar.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">Who performs the Umrah or Hajj?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">All rituals are performed by qualified Islamic scholars (Ulama) and their trusted staff who reside in or near Makkah. They have deep religious knowledge and perform every ritual with sincerity and according to Shariah.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">Is this service legally registered and trustworthy?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">Yes. Umratul Badal is a legally registered, fully accountable organisation. Our registration documents are available for review on our Verification page. We operate with complete transparency and have served clients across 40+ countries.</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     CTA BANNER
-════════════════════════════════════════ -->
-<section class="cta-banner">
-  <div class="cta-inner">
-    <div class="cta-arabic">احجز الآن</div>
-    <h2 class="cta-title">Ready to Fulfil This<br/>Sacred Obligation?</h2>
-    <p class="cta-sub">Let us perform Umrah or Hajj Badal for your loved ones with sincerity, care, and full documentation.</p>
-    <div class="cta-actions">
-      <a href="#" class="btn-gold">Book a Service</a>
-      <a href="https://wa.me/966577134926" class="btn-whatsapp">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        WhatsApp Us
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     FOOTER
-════════════════════════════════════════ -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="/mnt/user-data/uploads/1000109869.png" alt="Umratul Badal"/>
-        <div class="footer-logo-text">
-          <div class="en">Umratul Badal</div>
-          <div class="ar">عمرة البدل</div>
-        </div>
-      </div>
-      <p class="footer-tagline">Trusted Proxy Umrah and Hajj Badal services, performed by certified scholars in the Holy Cities of Mecca and Madinah.</p>
-      <div class="footer-socials">
-        <a href="#" class="social-btn" aria-label="Facebook">f</a>
-        <a href="#" class="social-btn" aria-label="Instagram">in</a>
-        <a href="#" class="social-btn" aria-label="YouTube">▶</a>
-        <a href="#" class="social-btn" aria-label="Email">✉</a>
-      </div>
     </div>
 
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links">
-        <li><a href="#">Umrah Badal</a></li>
-        <li><a href="#">Hajj Badal</a></li>
-        <li><a href="#">Ramadan Umrah</a></li>
-        <li><a href="#">All Services</a></li>
-      </ul>
+    <!-- Footer bottom bar -->
+    <div class="footer-bottom section-max">
+      <p class="footer-copy">© 2025 Umratul Badal. <span data-i18n="footer_rights">All rights reserved.</span></p>
+      <p class="footer-reg" data-i18n="footer_cert">Shariah Certified · Trusted Worldwide</p>
     </div>
 
-    <div>
-      <div class="footer-col-title">Donate</div>
-      <ul class="footer-links">
-        <li><a href="#">Feed Pilgrims</a></li>
-        <li><a href="#">Qur'an Donation</a></li>
-        <li><a href="#">Wheelchair Fund</a></li>
-        <li><a href="#">Zamzam Water</a></li>
-        <li><a href="#">Qurbani Sacrifice</a></li>
-      </ul>
-    </div>
+  </footer>
 
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <div class="footer-contact">
-        <p><span>📍</span> 65 Rogers Road, Dagenham, London RM10 8JX, UK</p>
-        <p><span>📞</span> +966 57 713 4926</p>
-        <p><span>✉</span> info@umratulbadal.com</p>
-        <p><span>💬</span> WhatsApp Support 24/7</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2025 Umratul Badal. All rights reserved.</div>
-    <div class="footer-reg">Shariah Certified · Trusted Worldwide</div>
-  </div>
-</footer>
+  <!-- ════════════════════════════════════
+       BACK TO TOP BUTTON
+  ════════════════════════════════════ -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
-<script src="script.js"></script>
+
+  <!-- Main JavaScript -->
+  <script src="main.js"></script>
+
 </body>
 </html>
