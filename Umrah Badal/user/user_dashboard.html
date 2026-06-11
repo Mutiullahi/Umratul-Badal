@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Umratul Badal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/dash.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><img src="../Images/logo.png" alt="Logo"></div>
+                <h3>UMRATUL BADAL</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="user_dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="user_profile.html"><i class="fas fa-user"></i> Profile Management</a></li>
+                <li><a href="user_history.html"><i class="fas fa-history"></i> Request History</a></li>
+                <li><a href="user_messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="user_donations.html"><i class="fas fa-hand-holding-heart"></i> Donations</a></li>
+                <li><a href="user_settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li style="margin-top: 50px;"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="top-navbar">
+                <div class="nav-toggle" id="sidebarCollapse"><i class="fas fa-bars"></i></div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Ahmed+Khan&background=006838&color=fff" alt="User">
+                        <div class="user-info"><span class="user-name">Ahmed Khan</span><span class="user-role">User</span></div>
+                    </div>
+                </div>
+            </nav>
+            <div class="main-content">
+                <div class="page-title"><h2>User Dashboard Overview</h2></div>
+                <div class="stats-grid">
+                    <div class="card stat-card">
+                        <div class="stat-icon"><i class="fas fa-tasks"></i></div>
+                        <div class="stat-details"><h4>Total Requests</h4><div class="stat-value">04</div></div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-icon"><i class="fas fa-spinner"></i></div>
+                        <div class="stat-details"><h4>Active Requests</h4><div class="stat-value">02</div></div>
+                    </div>
+                </div>
+                <div class="card" style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3>Submit New Umrah Badal Request</h3>
+                            <p style="color: var(--text-muted); margin-top: 5px;">Perform Umrah on behalf of your loved ones.</p>
+                        </div>
+                        <button class="btn btn-gold" data-modal="requestModal">Start Request <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Submit Umrah Badal Request</h3><span class="close-modal">&times;</span></div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group"><label>Beneficiary Name</label><input type="text" class="form-control"></div>
+                    <div class="form-group"><label>Service Type</label><select class="form-control"><option>Umrah Badal</option><option>Hajj Badal</option></select></div>
+                    <div class="form-group"><label>Special Instructions</label><textarea class="form-control" rows="3"></textarea></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline btn-close-modal">Cancel</button>
+                <button class="btn btn-primary">Submit Request</button>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/dash.js"></script>
+</body>
+</html>

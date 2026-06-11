@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings - Umratul Badal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/dash.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="../Images/logo.png" alt="Umratul Badal Logo">
+                </div>
+                <h3>UMRATUL BADAL</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="admin_dashboard.html"><i class="fas fa-user-shield"></i> System Admin</a></li>
+                <li><a href="admin_payment_gateway.html"><i class="fas fa-credit-card"></i> Payment Gateway</a></li>
+                <li><a href="admin_payment_dashboard.html"><i class="fas fa-wallet"></i> Payment Dashboard</a></li>
+                <li><a href="admin_requests.html"><i class="fas fa-tasks"></i> Manage Requests</a></li>
+                <li><a href="manage_users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+                <li ><a href="manage_managers.html"><i class="fas fa-user-tie"></i> Manage Managers</a></li>
+                <li><a href="service_categories.html"><i class="fas fa-layer-group"></i> Service Categories</a></li>
+                <li><a href="system_settings.html"><i class="fas fa-cogs"></i> System Settings</a></li>
+                <li style="margin-top: 40px;"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Topbar -->
+            <nav class="top-navbar">
+                <div class="nav-toggle" id="sidebarCollapse">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=D4AF37&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <span class="user-name">Super Admin</span>
+                            <span class="user-role">System Controller</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="page-title">
+                    <h2>System Settings</h2>
+                    <p style="color: var(--text-muted);">Configure global platform parameters.</p>
+                </div>
+
+                <div class="card">
+                    <form>
+                        <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                            <div>
+                                <h4 style="margin-bottom: 20px; color: var(--primary-green);">General Settings</h4>
+                                <div class="form-group">
+                                    <label>Platform Name</label>
+                                    <input type="text" class="form-control" value="Umratul Badal">
+                                </div>
+                                <div class="form-group">
+                                    <label>Support Email</label>
+                                    <input type="email" class="form-control" value="support@umratulbadal.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Default Currency</label>
+                                    <select class="form-control">
+                                        <option>USD ($)</option>
+                                        <option>SAR (﷼)</option>
+                                        <option>EUR (€)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 20px; color: var(--primary-green);">Notification Settings</h4>
+                                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="checkbox" checked>
+                                    <label style="margin-bottom: 0;">Email Notifications for New Requests</label>
+                                </div>
+                                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="checkbox" checked>
+                                    <label style="margin-bottom: 0;">SMS Alerts for Managers</label>
+                                </div>
+                                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="checkbox">
+                                    <label style="margin-bottom: 0;">Maintenance Mode</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; text-align: right;">
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/dash.js"></script>
+</body>
+</html>

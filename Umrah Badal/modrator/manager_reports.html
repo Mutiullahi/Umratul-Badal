@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Reports - Umratul Badal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/dash.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><img src="../Images/logo.png" alt="Logo"></div>
+                <h3>UMRATUL BADAL</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="manager_dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="manager_all_requests.html"><i class="fas fa-list"></i> View All Requests</a></li>
+                <li><a href="manager_assign.html"><i class="fas fa-user-check"></i> Assign Requests</a></li>
+                <li><a href="manager_messages.html"><i class="fas fa-comments"></i> Customer Messages</a></li>
+                <li class="active"><a href="manager_reports.html"><i class="fas fa-file-alt"></i> Generate Reports</a></li>
+                <li><a href="manager_logs.html"><i class="fas fa-history"></i> Activity Logs</a></li>
+                <li style="margin-top: 50px;"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="top-navbar">
+                <div class="nav-toggle" id="sidebarCollapse"><i class="fas fa-bars"></i></div>
+                <div class="topbar-right">
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Manager&background=006838&color=fff" alt="Manager">
+                        <div class="user-info"><span class="user-name">Suleiman Khalid</span><span class="user-role">Ops Manager</span></div>
+                    </div>
+                </div>
+            </nav>
+            <div class="main-content">
+                <div class="page-title"><h2>Operational Reports</h2></div>
+                <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="card">
+                        <h4>Request Completion Report</h4>
+                        <p style="font-size: 14px; color: #666; margin: 15px 0;">Generate a detailed report of all completed requests within a date range.</p>
+                        <div class="form-group"><label>Date From</label><input type="date" class="form-control"></div>
+                        <div class="form-group"><label>Date To</label><input type="date" class="form-control"></div>
+                        <button class="btn btn-primary">Download PDF Report</button>
+                    </div>
+                    <div class="card">
+                        <h4>Personnel Performance Report</h4>
+                        <p style="font-size: 14px; color: #666; margin: 15px 0;">Track the efficiency and feedback of field personnel.</p>
+                        <div class="form-group"><label>Select Region</label><select class="form-control"><option>All Regions</option><option>Makkah</option><option>Madinah</option></select></div>
+                        <button class="btn btn-primary">Generate Excel Sheet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/dash.js"></script>
+</body>
+</html>
