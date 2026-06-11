@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Auth Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/auth.css" />
 
 </head>
 <body>
@@ -41,7 +41,7 @@
         <!-- Logo -->
         <img
           class="deco-logo"
-          src="/mnt/user-data/uploads/1000109869.png"
+          src="./Images/logo.png"
           alt="Umratul Badal logo"
         />
 
@@ -93,7 +93,7 @@
       <!-- Top navigation bar -->
       <div class="auth-topbar">
         <div class="auth-topbar-logo">
-          <img src="/mnt/user-data/uploads/1000109869.png" alt="Umratul Badal" />
+          <img src="./Images/logo.png" alt="Umratul Badal" />
           <div>
             <span class="logo-en">Umratul Badal</span>
             <span class="logo-ar">عمرة البدل</span>
@@ -355,7 +355,7 @@
         // For demo: show a brief success message then redirect
         showAlert('success', 'Welcome back! Redirecting to your dashboard…');
         setTimeout(() => {
-          window.location.href = 'index.html';
+          window.location.href = './user/user_dashboard.html';
         }, 2000);
       } else {
         showAlert('error', 'Invalid email or password. Please try again.');
