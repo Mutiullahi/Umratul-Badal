@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Umratul Badal</title>
+    <link rel="stylesheet" href="../../css/dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="logo-container">
+                    <i class="fas fa-kaaba logo-icon"></i>
+                    <span class="logo-text">UMRATUL BADAL</span>
+                </a>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class=""><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="transactions.html" class=""><i class="fas fa-wallet"></i> Transactions</a></li>
+<li><a href="manage-users.html" class=""><i class="fas fa-user-friends"></i> Manage Users</a></li>
+<li><a href="managers.html" class=""><i class="fas fa-user-shield"></i> Managers</a></li>
+<li><a href="service-categories.html" class="active"><i class="fas fa-tags"></i> Service Categories</a></li>
+<li><a href="system-settings.html" class=""><i class="fas fa-cogs"></i> System Settings</a></li>
+<li><a href="messages.html" class=""><i class="fas fa-bullhorn"></i> Messages</a></li>
+
+                <li style="margin-top: auto;"><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <div class="header-left">
+                    <button id="sidebar-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search anything...">
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="icon-btn" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <div class="notification-wrapper">
+                        <button id="notification-btn" class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <div class="dropdown-menu" id="notification-dropdown">
+                            <div class="dropdown-header">
+                                <h4>Notifications</h4>
+                                <button class="btn btn-sm btn-outline" onclick="showToast('All marked as read', 'success')">Clear All</button>
+                            </div>
+                            <div class="dropdown-body">
+                                <div class="notification-item unread">
+                                    <div class="notif-icon" style="background: rgba(0,104,56,0.1); color: var(--primary-color);"><i class="fas fa-check"></i></div>
+                                    <div class="notif-content">
+                                        <h4>Request Approved</h4>
+                                        <p>Your Umrah Badal request #1234 has been approved.</p>
+                                        <div class="notif-time">2 mins ago</div>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notif-icon" style="background: rgba(212,175,55,0.1); color: var(--accent-color);"><i class="fas fa-envelope"></i></div>
+                                    <div class="notif-content">
+                                        <h4>New Message</h4>
+                                        <p>Operational Manager sent you a message.</p>
+                                        <div class="notif-time">1 hour ago</div>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notif-icon" style="background: rgba(220,53,69,0.1); color: var(--danger);"><i class="fas fa-exclamation-triangle"></i></div>
+                                    <div class="notif-content">
+                                        <h4>Security Alert</h4>
+                                        <p>New login detected from Mecca, Saudi Arabia.</p>
+                                        <div class="notif-time">5 hours ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="#">View All Notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=006838&color=fff" alt="Profile">
+                        <span style="font-weight: 600; font-size: 0.9rem;">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                
+<div class="page-header"><h2 class="page-title">Services</h2><button class="btn btn-primary" data-modal="category-form" data-action="add">Add Category</button></div>
+<div class="stats-grid">
+    <div class="card" style="padding:20px;text-align:center;"><h4>Umrah Badal</h4><button class="btn btn-sm btn-outline" data-modal="category-form" data-action="edit">Edit</button></div>
+</div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../../js/dash.js"></script>
+</body>
+</html>

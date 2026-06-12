@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Transactions - Umratul Badal</title>
+    <link rel="stylesheet" href="../../css/dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="logo-container">
+                    <i class="fas fa-kaaba logo-icon"></i>
+                    <span class="logo-text">UMRATUL BADAL</span>
+                </a>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class=""><i class="fas fa-th-large"></i> Dashboard</a></li>
+<li><a href="profile.html" class=""><i class="fas fa-user-circle"></i> Profile</a></li>
+<li><a href="request-history.html" class=""><i class="fas fa-history"></i> Requests</a></li>
+<li><a href="transactions.html" class="active"><i class="fas fa-file-invoice-dollar"></i> Transactions</a></li>
+<li><a href="messages.html" class=""><i class="fas fa-comment-dots"></i> Messages</a></li>
+<li><a href="settings.html" class=""><i class="fas fa-sliders-h"></i> Settings</a></li>
+
+                <li style="margin-top: auto;"><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <div class="header-left">
+                    <button id="sidebar-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search anything...">
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="icon-btn" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <div class="notification-wrapper">
+                        <button id="notification-btn" class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <div class="dropdown-menu" id="notification-dropdown">
+                            <div class="dropdown-header">
+                                <h4>Notifications</h4>
+                                <button class="btn btn-sm btn-outline" onclick="showToast('All marked as read', 'success')">Clear All</button>
+                            </div>
+                            <div class="dropdown-body">
+                                <div class="notification-item unread">
+                                    <div class="notif-icon" style="background: rgba(0,104,56,0.1); color: var(--primary-color);"><i class="fas fa-check"></i></div>
+                                    <div class="notif-content">
+                                        <h4>Request Approved</h4>
+                                        <p>Your Umrah Badal request #1234 has been approved.</p>
+                                        <div class="notif-time">2 mins ago</div>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notif-icon" style="background: rgba(212,175,55,0.1); color: var(--accent-color);"><i class="fas fa-envelope"></i></div>
+                                    <div class="notif-content">
+                                        <h4>New Message</h4>
+                                        <p>Operational Manager sent you a message.</p>
+                                        <div class="notif-time">1 hour ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="#">View All Notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=User+User&background=006838&color=fff" alt="Profile">
+                        <span style="font-weight: 600; font-size: 0.9rem;">User</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                
+<h2 class="page-title">Transaction History</h2>
+<div class="stats-grid">
+    <div class="stat-card"><div class="stat-icon"><i class="fas fa-receipt"></i></div><div class="stat-info"><h3>12</h3><p>Total Transactions</p></div></div>
+    <div class="stat-card"><div class="stat-icon" style="color:#28a745;"><i class="fas fa-wallet"></i></div><div class="stat-info"><h3>$2,450</h3><p>Total Paid</p></div></div>
+    <div class="stat-card"><div class="stat-icon" style="color:#ffc107;"><i class="fas fa-hourglass-half"></i></div><div class="stat-info"><h3>1</h3><p>Pending</p></div></div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <div style="display:flex; gap:15px;">
+            <input type="text" class="form-control" placeholder="Search TRX ID..." style="width:200px;">
+            <select class="form-control" style="width:150px;">
+                <option>All Status</option>
+                <option>Completed</option>
+                <option>Pending</option>
+                <option>Failed</option>
+            </select>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>TRX ID</th><th>Service</th><th>Method</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td>#TRX-9901</td><td>Umrah Badal</td><td>Stripe</td><td>$250.00</td><td><span class="status-badge status-completed">Completed</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline" data-transaction-action="view-details" data-transaction-id="TRX-9901">Details</button>
+                            <button class="btn btn-sm btn-outline" data-transaction-action="download-receipt" data-transaction-id="TRX-9901"><i class="fas fa-download"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#TRX-9902</td><td>Hajj Badal</td><td>PayPal</td><td>$1,200.00</td><td><span class="status-badge status-pending">Pending</span></td>
+                        <td><button class="btn btn-sm btn-outline" data-transaction-action="view-details">Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>#TRX-9903</td><td>Sadaqah</td><td>Manual</td><td>$50.00</td><td><span class="status-badge status-cancelled">Failed</span></td>
+                        <td><button class="btn btn-sm btn-primary" data-transaction-action="retry-payment">Retry</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../../js/dash.js"></script>
+</body>
+</html>
