@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Umratul Badal</title>
+    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #006838; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Poppins', sans-serif; }
+        .login-card { background: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 600px; }
+        .role-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .role-btn { padding: 20px; border: 1px solid #eee; border-radius: 10px; text-decoration: none; color: #006838; transition: 0.3s; }
+        .role-btn:hover { border-color: #D4AF37; background: #fcf9f0; transform: translateY(-5px); }
+        .role-btn i { font-size: 2rem; color: #D4AF37; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <i class="fas fa-kaaba fa-3x" style="color:#D4AF37;"></i>
+        <h1 style="font-family:'Cinzel'; margin:15px 0;">UMRATUL BADAL</h1>
+        <p>Select a role to preview the dashboard prototype</p>
+        <div class="role-grid">
+            <a href="dashboard/user/dashboard.html" class="role-btn"><i class="fas fa-user"></i><h4>User</h4></a>
+            <a href="dashboard/operational/dashboard.html" class="role-btn"><i class="fas fa-user-cog"></i><h4>Manager</h4></a>
+            <a href="dashboard/admin/dashboard.html" class="role-btn"><i class="fas fa-user-shield"></i><h4>Admin</h4></a>
+        </div>
+    </div>
+</body>
+</html>
